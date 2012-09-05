@@ -27,7 +27,8 @@
   "dependencies": {
     "express": "3.0",
     "ejs": "*",
-    "stylus": "*"
+    "stylus": "*",
+    "easymongo": "*"
   },
   "devDependencies": {},
   "bundleDependencies": [],
