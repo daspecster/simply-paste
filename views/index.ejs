@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/normalize.css' />
+    <link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div id="content">
+      <h1><%= title %></h1>
+      <form action="/paste" method="post">
+      	<textarea name="pasteContent" id="styled" onfocus="if (this.value == 'Enter your paste here...') { this.value=''; }">Enter your paste here...</textarea>
+      	<input type="submit" value="Paste!" />
+      </form>
+      <div id="footer">
+        <p>a product of <a href="http://blog.elevenbasetwo.com/">ElevenBaseTwo</a>.
+      </div>
+    </div>
+  </body>
+</html>

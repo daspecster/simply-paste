@@ -1,0 +1,42 @@
+body {
+  font: 1em "Quicksand", Helvetica, Georgia, serif;
+  color: #ccc;
+  margin: 15px 0px;
+  padding: 0px;
+  text-align: center;
+}
+h1 {
+  font: 200% "Quicksand", Helvetica, Georgia, serif;
+}
+pre code {
+  font: 110% "Quicksand", Georgia, serif;
+  line-height: 1.7em;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+a {
+  color: #00b7ff;
+}
+textarea#styled {
+  width: 99%;
+  height: 300px;
+  border: 2px solid #ddd;
+  font-family: "Quicksand", Georgia, serif;
+  font-size: 100%;
+  margin-bottom: 15px;
+}
+input {
+  background-color: #ddd;
+  border: 1px solid #ddd;
+  color: #333;
+  float: right;
+  font-size: 120%;
+  padding: 5px;
+  border-radius: 5px;
+}
+#content {
+  width: 75%;
+  margin: 0px auto;
+  text-align: left;
+  padding: 15px;
+}
