@@ -1,5 +1,6 @@
 var easymongo = require('easymongo');
 var mongo = new easymongo({db: 'prettypaste'});
+var short = require('short');
 
 function crc32 (str) {
     // Calculate the crc32 polynomial of a string  
@@ -44,11 +45,30 @@ exports.index = function(req, res){
 
  exports.paste = function(req, res){
  	var paste_id;
- 	var short_url = crc32(req.body.pasteContent);
-	mongo.save('pastes', { paste: req.body.pasteContent, short_url: short_url.toString() }, function(results) {
-  		paste_id = results._id;
-  		res.redirect('/paste/' + short_url);
-	});
+    var url = req.body.pasteContent;
+ 	var options = {length: 7};
+    //var short_url = crc32(req.body.pasteContent);
+    
+    short.connect("mongodb://localhost/short");
+
+    short.generate(url, options, function (error, shortURL) {
+        if (error) {
+          console.error(error);
+        }
+        else {
+          
+          //var tinyUrl = [domain, ":", port, "/", shortURL.hash].join("");
+          //console.log(["URL is ", shortURL.URL, " ", tinyUrl].join(""));
+          //res.end(tinyUrl);
+            var short_url = shortURL.hash;
+            mongo.save('pastes', { paste: req.body.pasteContent, short_url: short_url }, function(results) {
+                paste_id = results._id;
+                res.redirect('/paste/' + short_url);
+            });
+
+        }
+    });
+
  };
 
 
