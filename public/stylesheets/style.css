@@ -34,6 +34,17 @@ input {
   padding: 5px;
   border-radius: 5px;
 }
+#logo {
+  background-image: url("/images/pastetic-trans.png");
+  background-repeat: no-repeat;
+  opacity: 0.05;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 323px;
+  height: 448px;
+  z-index: -9999;
+}
 #content {
   width: 75%;
   margin: 0px auto;
